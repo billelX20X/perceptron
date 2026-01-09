@@ -1,17 +1,28 @@
-from flask import Flask
-import cv2
-import numpy as np
 
-app=Flask(__name__)
+from flask import Flask, request, jsonify
 
-
-img=np.array(cv2.imread("im1.jpg",0))
+app = Flask(__name__)
 
 @app.route('/')
-def home():
-       
-         return "hello world 2222222222"+str(img[1])
+def hello_world():
+    return 'Hello from Flask!'
+
+
+import time
+
+@app.route("/test", methods=["POST"])
+def test():
+    data = request.json
+
+    time.sleep(1)
+
+    return jsonify({
+        "status": "success",
+        "user_id": data.get("user_id")
+    })
+
 if __name__ =="__main__":
     app.run()
+
 
 
