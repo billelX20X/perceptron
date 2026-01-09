@@ -10,8 +10,9 @@ def hello_world():
 @app.route("/test", methods=["POST"])
 def test():
     data = request.json
-    time.sleep(1)
+    time.sleep(6)
     return jsonify({
         "status": "success",
         "user_id": data.get("user_id")
     })
+
