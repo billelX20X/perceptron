@@ -10,7 +10,8 @@ img=np.array(cv2.imread("im1.jpg",0))
 @app.route('/')
 def home():
        
-         return "hello world"+str(img[1])
+         return "hello world 2222222222"+str(img[1])
 if __name__ =="__main__":
     app.run()
+
 
